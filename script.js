@@ -1,11 +1,16 @@
 const targetDate = new Date("2026-05-28T00:00:00+05:30").getTime();
+const unlockDate = targetDate + (6 * 60 * 60 * 1000);
+
 const units = {
   days: document.querySelector("#days"),
   hours: document.querySelector("#hours"),
   minutes: document.querySelector("#minutes"),
   seconds: document.querySelector("#seconds"),
 };
+
 const message = document.querySelector("#countdown-message");
+const secretContent = document.querySelector("#secret-content");
+const unlockMessage = document.querySelector("#unlock-message");
 
 function pad(value) {
   return String(value).padStart(2, "0");
@@ -20,19 +25,45 @@ function updateCountdown() {
     units.hours.textContent = "00";
     units.minutes.textContent = "00";
     units.seconds.textContent = "00";
-    message.textContent = "It is Progya's 18th birthday. Let the celebration begin.";
-    return;
+    message.textContent =
+      "Happy Birthday, Progya ✨ Let the celebration begin.";
+  } else {
+    const days = Math.floor(
+      distance / (1000 * 60 * 60 * 24)
+    );
+    const hours = Math.floor(
+      (distance / (1000 * 60 * 60)) % 24
+    );
+    const minutes = Math.floor(
+      (distance / (1000 * 60)) % 60
+    );
+    const seconds = Math.floor(
+      (distance / 1000) % 60
+    );
+
+    units.days.textContent = pad(days);
+    units.hours.textContent = pad(hours);
+    units.minutes.textContent = pad(minutes);
+    units.seconds.textContent = pad(seconds);
   }
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
+  const unlockDistance = unlockDate - now;
 
-  units.days.textContent = pad(days);
-  units.hours.textContent = pad(hours);
-  units.minutes.textContent = pad(minutes);
-  units.seconds.textContent = pad(seconds);
+  if (unlockDistance <= 0) {
+    secretContent.classList.remove("hidden");
+    unlockMessage.textContent =
+      "✨ The secret surprise is now unlocked ✨";
+  } else {
+    const h = Math.floor(
+      (unlockDistance / (1000 * 60 * 60)) % 24
+    );
+    const m = Math.floor(
+      (unlockDistance / (1000 * 60)) % 60
+    );
+
+    unlockMessage.textContent =
+      `Secret unlocks in ${pad(h)}h ${pad(m)}m after the countdown ends`;
+  }
 }
 
 updateCountdown();
