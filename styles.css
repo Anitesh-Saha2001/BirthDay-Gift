@@ -657,23 +657,26 @@ footer {
   background: #fffdf9;
   border-radius: 14px;
 
-  overflow: hidden;
-
   box-shadow:
     0 18px 40px rgba(0,0,0,.14);
 
   transform-origin: bottom center;
 
-  transform:
-    scaleY(.04);
+  transform: scaleY(.04);
 
-  transition:
-    transform 1s ease;
+  transition: transform 1s ease;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .letter-content {
-  height: 100%;
+  flex: 1;
+
   overflow-y: auto;
+  overflow-x: hidden;
 
   padding: 28px;
 
@@ -683,6 +686,8 @@ footer {
 
   scrollbar-width: thin;
   scrollbar-color: #ff8fa9 #fff;
+
+  -webkit-overflow-scrolling: touch;
 }
 
 /* OPEN */
