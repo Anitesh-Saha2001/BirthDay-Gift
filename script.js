@@ -1,5 +1,5 @@
 const targetDate = new Date("2026-05-28T00:00:00+05:30").getTime();
-const unlockDate = Date.now() + (2 * 60 * 1000);
+const unlockDate = new Date("2026-05-28T00:30:00+05:30").getTime();
 
 const units = {
   days: document.querySelector("#days"),
