@@ -68,6 +68,26 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+const sealBtn =
+  document.querySelector("#sealBtn");
+
+const envelope =
+  document.querySelector("#envelope");
+
+if (sealBtn && envelope) {
+
+  sealBtn.addEventListener(
+    "click",
+    () => {
+
+      envelope.classList.toggle(
+        "open"
+      );
+
+    }
+  );
+
+}
 
 const canvas = document.querySelector("#sky");
 const context = canvas.getContext("2d");
