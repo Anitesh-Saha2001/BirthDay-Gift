@@ -631,7 +631,7 @@ footer {
   height: 340px;
   margin: auto;
   perspective: 1200px;
-  overflow: hidden; /* ← ADD THIS */
+  /* NO overflow: hidden */
 }
 /* Letter */
 
@@ -644,7 +644,6 @@ footer {
   transform: translateX(-50%) translateY(140px);
   transition: 1s ease;
   z-index: 3;
-  /* REMOVE pointer-events: none from here */
 }
 
 .letter-fold {
@@ -692,7 +691,8 @@ footer {
 .envelope.open .letter-card {
   transform: translateX(-50%) translateY(-170px);
   z-index: 9;
-  pointer-events: auto; /* ← allow scroll when open */
+  pointer-events: auto;
+  visibility: visible;
 }
 
 .envelope.open .letter-fold {
@@ -777,7 +777,8 @@ footer {
 
 .envelope:not(.open) .letter-card {
   z-index: 1;
-  pointer-events: none; /* ← block interaction only when closed */
+  pointer-events: none;
+  visibility: hidden;  /* ← hides letter completely when closed */
 }
 
 .envelope:not(.open) .letter-fold {
