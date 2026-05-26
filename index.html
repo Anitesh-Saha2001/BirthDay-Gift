@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A birthday surprise website for Progya Bachhar, celebrating her 18th birthday on May 28, 2026."
+    />
+    <title>Happy 18th Birthday, Progya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="sky" aria-hidden="true"></canvas>
+
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Progya birthday homepage">
+        <span class="brand-mark">P</span>
+        <span>Progya</span>
+      </a>
+      <nav aria-label="Birthday sections">
+        <a href="#countdown">Countdown</a>
+        <a href="#wishes">Wishes</a>
+        <a href="#memories">Moments</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">28 May 2026</p>
+          <h1>Happy 18th Birthday, Progya Bachhar</h1>
+          <p class="hero-note">
+            A little corner of the internet made just for you, filled with
+            wishes, light, and every good thing this new chapter deserves.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#wishes">Open the surprise</a>
+            <a class="button ghost" href="#countdown">See the countdown</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Birthday cake illustration">
+          <div class="orbital one"></div>
+          <div class="orbital two"></div>
+          <div class="cake">
+            <div class="flame"></div>
+            <div class="candle"></div>
+            <div class="icing"></div>
+            <div class="cake-body">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="plate"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="countdown-section" id="countdown">
+        <div class="section-heading">
+          <p class="eyebrow">Almost eighteen</p>
+          <h2>Counting down to her day</h2>
+        </div>
+        <div class="countdown" aria-live="polite">
+          <div>
+            <strong id="days">00</strong>
+            <span>Days</span>
+          </div>
+          <div>
+            <strong id="hours">00</strong>
+            <span>Hours</span>
+          </div>
+          <div>
+            <strong id="minutes">00</strong>
+            <span>Minutes</span>
+          </div>
+          <div>
+            <strong id="seconds">00</strong>
+            <span>Seconds</span>
+          </div>
+        </div>
+        <p class="countdown-message" id="countdown-message">
+          The celebration begins at midnight on 28 May 2026.
+        </p>
+      </section>
+
+      <section class="wish-band" id="wishes">
+        <div class="wish-copy">
+          <p class="eyebrow">For Progya</p>
+          <h2>May eighteen feel like sunrise</h2>
+          <p>
+            May this year bring you courage that feels natural, laughter that
+            stays a little longer, dreams that grow brighter, and people who
+            remind you how deeply loved you are.
+          </p>
+        </div>
+        <div class="letter">
+          <p>Dear Progya,</p>
+          <p>
+            You deserve a birthday that feels soft, bright, and unforgettable.
+            Today is not just about turning 18. It is about stepping into a new
+            chapter with your own sparkle, your own strength, and your own
+            beautiful story.
+          </p>
+          <p>Happy birthday, with all my heart.</p>
+        </div>
+      </section>
+
+      <section class="moments" id="memories">
+        <div class="section-heading">
+          <p class="eyebrow">Little promises</p>
+          <h2>Things I hope this year gives you</h2>
+        </div>
+        <div class="moment-grid">
+          <article>
+            <span>01</span>
+            <h3>Peace</h3>
+            <p>Quiet confidence, calm mornings, and a heart that feels safe.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Joy</h3>
+            <p>Unexpected smiles, favorite songs, and days that feel golden.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Dreams</h3>
+            <p>Big plans, brave choices, and the courage to become yourself.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with love for Progya Bachhar's 18th birthday.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

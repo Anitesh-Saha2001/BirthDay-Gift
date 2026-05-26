@@ -1,0 +1,455 @@
+:root {
+  color-scheme: light;
+  --ink: #231f28;
+  --muted: #6f6575;
+  --paper: #fff9f5;
+  --rose: #e94b74;
+  --coral: #ff8066;
+  --gold: #f6b84b;
+  --mint: #84c7ad;
+  --blue: #4666b0;
+  --shadow: 0 22px 70px rgba(71, 46, 58, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 14% 18%, rgba(255, 128, 102, 0.28), transparent 24rem),
+    radial-gradient(circle at 82% 8%, rgba(132, 199, 173, 0.32), transparent 22rem),
+    linear-gradient(135deg, #fff5f7 0%, #fffaf0 48%, #f2fbff 100%);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+#sky {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.topbar,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 4rem);
+  background: rgba(255, 249, 245, 0.78);
+  border-bottom: 1px solid rgba(35, 31, 40, 0.08);
+  backdrop-filter: blur(18px);
+  z-index: 4;
+}
+
+.brand,
+nav a,
+.button {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 800;
+}
+
+.brand-mark {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(135deg, var(--rose), var(--blue));
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+}
+
+nav {
+  display: flex;
+  gap: clamp(0.8rem, 2vw, 1.8rem);
+  color: var(--muted);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: var(--rose);
+}
+
+.hero {
+  min-height: 92svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding: 7rem clamp(1.25rem, 5vw, 6rem) 2.5rem;
+}
+
+.hero-copy {
+  max-width: 47rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.9rem;
+  color: var(--rose);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  line-height: 0.96;
+}
+
+h1 {
+  max-width: 49rem;
+  margin-bottom: 1.35rem;
+  font-size: clamp(3.2rem, 7vw, 5.8rem);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+}
+
+h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.35rem;
+}
+
+.hero-note,
+.wish-copy p,
+.letter,
+.moments p,
+.countdown-message {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  line-height: 1.8;
+}
+
+.hero-note {
+  max-width: 38rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3.2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(35, 31, 40, 0.1);
+}
+
+.primary {
+  color: #fff;
+  background: linear-gradient(135deg, var(--rose), var(--coral));
+}
+
+.ghost {
+  border: 1px solid rgba(35, 31, 40, 0.15);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.hero-art {
+  position: relative;
+  display: grid;
+  min-height: 29rem;
+  place-items: center;
+}
+
+.orbital {
+  position: absolute;
+  border: 1px solid rgba(233, 75, 116, 0.23);
+  border-radius: 50%;
+  animation: turn 18s linear infinite;
+}
+
+.orbital.one {
+  width: min(35vw, 27rem);
+  height: min(35vw, 27rem);
+}
+
+.orbital.two {
+  width: min(27vw, 20rem);
+  height: min(27vw, 20rem);
+  border-color: rgba(70, 102, 176, 0.24);
+  animation-duration: 13s;
+  animation-direction: reverse;
+}
+
+.orbital::before,
+.orbital::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 28px rgba(246, 184, 75, 0.85);
+}
+
+.orbital::before {
+  top: 15%;
+  left: 12%;
+}
+
+.orbital::after {
+  right: 17%;
+  bottom: 8%;
+  background: var(--mint);
+  box-shadow: 0 0 28px rgba(132, 199, 173, 0.78);
+}
+
+.cake {
+  position: relative;
+  width: min(23rem, 74vw);
+  filter: drop-shadow(0 36px 40px rgba(71, 46, 58, 0.22));
+}
+
+.flame {
+  width: 2rem;
+  height: 2.8rem;
+  margin: 0 auto -0.15rem;
+  border-radius: 50% 50% 48% 48%;
+  background: linear-gradient(#fff6a8 0 34%, var(--gold) 35% 72%, var(--coral));
+  transform-origin: 50% 100%;
+  animation: flicker 1.2s ease-in-out infinite alternate;
+}
+
+.candle {
+  width: 1rem;
+  height: 5.2rem;
+  margin: 0 auto;
+  border-radius: 0.7rem;
+  background: repeating-linear-gradient(45deg, #fff 0 0.55rem, #ffb5c8 0.55rem 1.1rem);
+}
+
+.icing {
+  height: 5rem;
+  border-radius: 3rem 3rem 1.2rem 1.2rem;
+  background: linear-gradient(180deg, #fff 0 48%, #ffe2ea 49% 100%);
+}
+
+.cake-body {
+  display: flex;
+  justify-content: space-around;
+  height: 10.5rem;
+  padding: 2.2rem;
+  border-radius: 1.2rem 1.2rem 2.2rem 2.2rem;
+  background: linear-gradient(135deg, #f2688a, #ff8c6f);
+}
+
+.cake-body span {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #fff8cf;
+  box-shadow:
+    3.7rem 1.5rem 0 #fff8cf,
+    1.2rem 4rem 0 #fff8cf;
+}
+
+.plate {
+  width: 112%;
+  height: 2.2rem;
+  margin-left: -6%;
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(70, 102, 176, 0.88), rgba(132, 199, 173, 0.88));
+}
+
+.countdown-section,
+.moments {
+  padding: clamp(4rem, 9vw, 7rem) clamp(1.25rem, 5vw, 6rem);
+}
+
+.section-heading {
+  max-width: 52rem;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(8rem, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.countdown div,
+.moment-grid article,
+.letter {
+  border: 1px solid rgba(35, 31, 40, 0.09);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.countdown div {
+  min-height: 9rem;
+  padding: 1.3rem;
+}
+
+.countdown strong {
+  display: block;
+  color: var(--blue);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 8vw, 5.3rem);
+  line-height: 0.85;
+}
+
+.countdown span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.countdown-message {
+  margin-top: 1.5rem;
+}
+
+.wish-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(18rem, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 5vw, 6rem);
+  background:
+    linear-gradient(rgba(255, 249, 245, 0.78), rgba(255, 249, 245, 0.78)),
+    url("assets/birthday-ribbons.svg") center / cover;
+}
+
+.letter {
+  padding: clamp(1.4rem, 4vw, 3rem);
+}
+
+.letter p:last-child {
+  margin-bottom: 0;
+  color: var(--rose);
+  font-weight: 800;
+}
+
+.moment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.moment-grid article {
+  min-height: 15rem;
+  padding: 1.5rem;
+}
+
+.moment-grid span {
+  display: inline-flex;
+  margin-bottom: 2rem;
+  color: var(--rose);
+  font-weight: 900;
+}
+
+footer {
+  padding: 2rem clamp(1.25rem, 5vw, 6rem) 3rem;
+  color: var(--muted);
+}
+
+@keyframes turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flicker {
+  from {
+    transform: rotate(-3deg) scale(0.96);
+  }
+  to {
+    transform: rotate(4deg) scale(1.04);
+  }
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    position: absolute;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero,
+  .wish-band {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 6.5rem;
+  }
+
+  .hero-art {
+    min-height: 24rem;
+  }
+
+  .countdown,
+  .moment-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 3.9rem;
+  }
+
+  .hero-actions,
+  .countdown,
+  .moment-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

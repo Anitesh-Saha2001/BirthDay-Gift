@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Soft birthday ribbons and stars">
+  <rect width="1600" height="900" fill="#fff9f5"/>
+  <path d="M-40 655C194 518 333 746 548 590c206-150 358-272 617-146 226 110 323-47 485-108" fill="none" stroke="#e94b74" stroke-width="34" stroke-linecap="round" opacity=".16"/>
+  <path d="M-56 328C159 455 301 178 542 288c230 105 381 271 637 115 228-139 339 6 484 73" fill="none" stroke="#4666b0" stroke-width="28" stroke-linecap="round" opacity=".13"/>
+  <path d="M72 122l18 37 41 6-29 29 7 40-37-19-37 19 7-40-30-29 42-6 18-37z" fill="#f6b84b" opacity=".28"/>
+  <path d="M1358 640l16 32 35 5-25 25 6 35-32-17-31 17 6-35-26-25 36-5 15-32z" fill="#84c7ad" opacity=".32"/>
+  <circle cx="1304" cy="148" r="80" fill="#ff8066" opacity=".12"/>
+  <circle cx="305" cy="760" r="96" fill="#84c7ad" opacity=".16"/>
+  <g fill="#e94b74" opacity=".18">
+    <circle cx="542" cy="146" r="9"/>
+    <circle cx="825" cy="728" r="7"/>
+    <circle cx="1037" cy="238" r="11"/>
+    <circle cx="1198" cy="812" r="8"/>
+    <circle cx="210" cy="468" r="10"/>
+  </g>
+</svg>
