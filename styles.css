@@ -637,30 +637,46 @@ footer {
 .letter-card {
   position: absolute;
   left: 50%;
-  bottom: 70px;
+  bottom: 55px;
   width: 340px;
-  min-height: 320px;
-  background: #fffdf9;
-  border-radius: 14px;
+  height: 300px;
 
   transform:
     translateX(-50%)
-    translateY(130px);
+    translateY(145px);
 
   transition: 1s ease;
-  z-index: 3;
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.letter-fold {
+  width: 100%;
+  height: 100%;
+
+  background: #fffdf9;
+  border-radius: 14px;
+
+  overflow: hidden;
 
   box-shadow:
     0 18px 40px rgba(0,0,0,.14);
 
-  overflow-y: auto;
-  padding-bottom: 20px;
+  transform-origin: bottom center;
+
+  transform:
+    scaleY(.06);
+
+  transition:
+    transform 1s ease,
+    border-radius 1s ease;
 }
 
 .letter-content {
-  padding: 25px;
+  padding: 28px;
   color: #555;
-  line-height: 1.7;
+  line-height: 1.8;
   font-size: .95rem;
 }
 
@@ -669,8 +685,13 @@ footer {
 .envelope.open .letter-card {
   transform:
     translateX(-50%)
-    translateY(-230px);
+    translateY(-235px);
   z-index: 9;
+}
+
+.envelope.open .letter-fold {
+  transform:
+    scaleY(1);
 }
 
 /* Envelope Body */
@@ -748,6 +769,15 @@ footer {
   z-index: 6;
 }
 
+.envelope:not(.open) .letter-card {
+  z-index: 1;
+}
+
+.envelope:not(.open) .letter-fold {
+  transform:
+    scaleY(.06);
+}
+
 /* Heart Seal */
 
 .heart-seal {
@@ -800,10 +830,10 @@ footer {
     height: 300px;
   }
 
-  .letter-card {
-    width: 260px;
-    min-height: 300px;
-  }
+.letter-card {
+  width: 260px;
+  height: 280px;
+}
 
   .envelope.open .letter-card {
     transform:
